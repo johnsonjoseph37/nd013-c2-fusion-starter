@@ -1,3 +1,14 @@
+# Writeup: Visualize the point-cloud 
+
+From the point cloud visuals, some of the features are easily identifiable:
+1) Tires
+2) Rear-view mirrors
+3) Front Windows
+4) Far away vehicles
+
+
+
+
 # Writeup: Track 3D-Objects Over Time
 
 Please use this starter template to answer the following questions:
