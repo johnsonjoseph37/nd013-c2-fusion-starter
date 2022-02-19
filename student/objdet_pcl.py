@@ -143,6 +143,7 @@ def bev_from_pcl(lidar_pcl, configs):
     intensity_map = np.zeros((configs.bev_height + 1, configs.bev_width + 1))
 
     # step 2 : re-arrange elements in lidar_pcl_cpy by sorting first by x, then y, then -z (use numpy.lexsort)
+    lidar_pcl_cpy[lidar_pcl_cpy[:,3]>1.0,3] = 1.0
     idx_height = np.lexsort((-lidar_pcl_cpy[:, 2], lidar_pcl_cpy[:, 1], lidar_pcl_cpy[:, 0]))
     lidar_pcl_top = lidar_pcl_cpy[idx_height]
 
