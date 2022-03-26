@@ -65,7 +65,7 @@ def load_configs_model(model_name='darknet', configs=None):
 
         configs.model_path = os.path.join(parent_path, 'tools', 'objdet_models', 'resnet')
         configs.pretrained_filename = os.path.join(configs.model_path, 'pretrained', 'fpn_resnet_18_epoch_300.pth')
-        configs.arch = 'fpn_resnet_18'
+        configs.arch = 'fpn_resnet'
         configs.saved_fn = 'fpn_resnet'
         configs.batch_size = 1
         configs.conf_thresh = 0.5
@@ -93,6 +93,7 @@ def load_configs_model(model_name='darknet', configs=None):
         configs.num_z = 1
         configs.num_dim = 3
         configs.num_direction = 2  # sin, cos
+        configs.min_iou=0.5
 
         configs.heads = {
             'hm_cen': configs.num_classes,
@@ -158,8 +159,9 @@ def create_model(configs):
         #######
         print("student task ID_S3_EX1-4")
         try:
-            arch_parts = configs.arch.split('_')
-            num_layers = int(arch_parts[-1])
+            #arch_parts = configs.arch.split('_')
+            #num_layers = int(arch_parts[-1])
+            num_layers = 18
         except:
             raise ValueError
         model = fpn_resnet.get_pose_net(num_layers=num_layers, heads=configs.heads, head_conv=configs.head_conv,
