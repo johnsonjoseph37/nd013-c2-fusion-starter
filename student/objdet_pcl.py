@@ -128,7 +128,7 @@ def bev_from_pcl(lidar_pcl, configs):
     lidar_pcl_cpy[:, 1] = np.int_(np.floor(lidar_pcl_cpy[:, 1] / bev_discret) + (configs.bev_width + 1) / 2)
 
     # step 4 : visualize point-cloud using the function show_pcl from a previous task
-    show_pcl(lidar_pcl)
+    #show_pcl(lidar_pcl)
 
     #######
     ####### ID_S2_EX1 END #######     
@@ -160,11 +160,11 @@ def bev_from_pcl(lidar_pcl, configs):
     ## step 5 : temporarily visualize the intensity map using OpenCV to make sure that vehicles separate well from the background
     img_intensity = intensity_map * 256
     img_intensity = img_intensity.astype(np.uint8)
-    while (1):
-        cv2.imshow('img_intensity', img_intensity)
-        if cv2.waitKey(10) & 0xFF == 27:
-            break
-    cv2.destroyAllWindows()
+    #while (1):
+    #    cv2.imshow('img_intensity', img_intensity)
+    #    if cv2.waitKey(10) & 0xFF == 27:
+    #        break
+    #cv2.destroyAllWindows()
 
     #######
     ####### ID_S2_EX2 END ####### 
@@ -186,11 +186,11 @@ def bev_from_pcl(lidar_pcl, configs):
     ## step 3 : temporarily visualize the intensity map using OpenCV to make sure that vehicles separate well from the background
     img_height = height_map * 256
     img_height = img_height.astype(np.uint8)
-    while (1):
-        cv2.imshow('img_height', img_height)
-        if cv2.waitKey(10) & 0xFF == 27:
-            break
-    cv2.destroyAllWindows()
+    #while (1):
+    #    cv2.imshow('img_height', img_height)
+    #    if cv2.waitKey(10) & 0xFF == 27:
+    #        break
+    #cv2.destroyAllWindows()
 
     #######
     ####### ID_S2_EX3 END #######       
@@ -204,11 +204,11 @@ def bev_from_pcl(lidar_pcl, configs):
     ## Temporarily visualize the density map using OpenCV 
     img_density = density_map * 256
     img_density = img_density.astype(np.uint8)
-    while (1):
-        cv2.imshow('img_density', img_density)
-        if cv2.waitKey(10) & 0xFF == 27:
-            break
-    cv2.destroyAllWindows()
+    #while (1):
+    #    cv2.imshow('img_density', img_density)
+    #    if cv2.waitKey(10) & 0xFF == 27:
+    #        break
+    #cv2.destroyAllWindows()
     
     # assemble 3-channel bev-map from individual maps
     bev_map = np.zeros((3, configs.bev_height, configs.bev_width))
