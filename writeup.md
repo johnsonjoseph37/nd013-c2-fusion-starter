@@ -22,6 +22,11 @@ From the point cloud visuals, some of the features are easily identifiable:
 ## Model-based Object Detection in BEV Image
 
 ## Performance Evaluation for Object Detection
+![image](https://user-images.githubusercontent.com/84423466/164934374-0e1744f9-9cb2-47d9-aa43-d9dac8b2134f.png)
+![image](https://user-images.githubusercontent.com/84423466/164934311-b9515566-57af-488b-bcfd-e8fe1fa72fbd.png)
+
+![image](https://user-images.githubusercontent.com/84423466/164934821-df72f0c3-9545-40fc-8247-499d0221ab24.png)
+![image](https://user-images.githubusercontent.com/84423466/164934694-5ffffb54-1570-4195-a804-dacc96310e91.png)
 
 
 
