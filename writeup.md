@@ -52,13 +52,22 @@ From the point cloud visuals, some of the features are easily identifiable:
 Please use this starter template to answer the following questions:
 
 ### 1. Write a short recap of the four tracking steps and what you implemented there (filter, track management, association, camera fusion). Which results did you achieve? Which part of the project was most difficult for you to complete, and why?
+In the first step, I implemented the Kalman Filter's basic code - Predict and Update. The system matrix, F and covariance matrix, Q, had to be made three dimensional. 
+![Step 1 RMSE](https://user-images.githubusercontent.com/84423466/173482765-5fe53799-ae6d-4128-8338-df3c6c33b354.png)
 
+In step 2, I did track initialization and track management activities, assuming Lidar sensor only. This was kind-of difficult to get right. I used the score as described in the classroom - # of detections in a window. My code had a bug, which I discovered when I reached step 3.
+![Step 2 RMSE](https://user-images.githubusercontent.com/84423466/173482794-9c306410-9268-46d9-b809-53ed3c8d27c9.png)
+
+In step 3, I implemented multi-object tracking, which was not very different from the classroom approach.
+![Step 3 RMSE](https://user-images.githubusercontent.com/84423466/173482809-aa2e2cef-9dc7-462b-be0d-641aac197647.png)
+
+Finally, in step 4, I filled in the code to calculate the non-linear measurement function get_hx(x). It took a lot of time to understand the rotation and translation concepts that were implemented in get_H(x).
 
 ### 2. Do you see any benefits in camera-lidar fusion compared to lidar-only tracking (in theory and in your concrete results)? 
-
+If we are talking about efficiency, I'd say a lidar-only system will be sufficient 99% of the time. But since human lives are involved, 99% is not good enough. So the redundancy provided by a camera is critical. I did not see a difference in RMSE after introducing the camera in Step 4. 
 
 ### 3. Which challenges will a sensor fusion system face in real-life scenarios? Did you see any of these challenges in the project?
-
+One challenge I faced during the project was when camera measurements were not coming in, and it was reducing the score of a track, causing them not to get confirmed. If a sensor malfunctioned, and the sensor measurements stop coming in, legitimate tracks can get deleted.
 
 ### 4. Can you think of ways to improve your tracking results in the future?
-
+A more adaptive track scoring and management module might be useful in improving tracking results.
