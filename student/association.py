@@ -121,7 +121,7 @@ class Association:
         
         # calc Mahalanobis distance
         H = meas.sensor.get_H(track.x) # measurement matrix
-        gamma = meas.z - H*track.x
+        gamma = meas.z - meas.sensor.get_hx(track.x)
         S = H*track.P*H.transpose() + meas.R
         MHD = gamma.transpose()*np.linalg.inv(S)*gamma # Mahalanobis distance formula
         return MHD
