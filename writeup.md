@@ -59,7 +59,7 @@ In step 2, I did track initialization and track management activities, assuming 
 ![Step 2 RMSE](https://user-images.githubusercontent.com/84423466/173482794-9c306410-9268-46d9-b809-53ed3c8d27c9.png)
 
 In step 3, I implemented multi-object tracking, which was not very different from the classroom approach.
-![Step 3 RMSE](https://user-images.githubusercontent.com/84423466/173482809-aa2e2cef-9dc7-462b-be0d-641aac197647.png)
+![Step 3 RMSE](https://user-images.githubusercontent.com/84423466/173710988-c24db358-8a83-48f4-84d3-bedc6f2ce9fa.png)
 
 Finally, in step 4, I filled in the code to calculate the non-linear measurement function get_hx(x). It took a lot of time to understand the rotation and translation concepts that were implemented in get_H(x).
 
