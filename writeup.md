@@ -52,16 +52,23 @@ From the point cloud visuals, some of the features are easily identifiable:
 Please use this starter template to answer the following questions:
 
 ### 1. Write a short recap of the four tracking steps and what you implemented there (filter, track management, association, camera fusion). Which results did you achieve? Which part of the project was most difficult for you to complete, and why?
+
 In the first step, I implemented the Kalman Filter's basic code - Predict and Update. The system matrix, F and covariance matrix, Q, had to be made three dimensional. 
+
 ![Step 1 RMSE](https://user-images.githubusercontent.com/84423466/173482765-5fe53799-ae6d-4128-8338-df3c6c33b354.png)
 
 In step 2, I did track initialization and track management activities, assuming Lidar sensor only. This was kind-of difficult to get right. I used the score as described in the classroom - # of detections in a window. My code had a bug, which I discovered when I reached step 3.
+
 ![Step 2 RMSE](https://user-images.githubusercontent.com/84423466/173482794-9c306410-9268-46d9-b809-53ed3c8d27c9.png)
 
 In step 3, I implemented multi-object tracking, which was not very different from the classroom approach.
-![Step 3 RMSE](https://user-images.githubusercontent.com/84423466/173710988-c24db358-8a83-48f4-84d3-bedc6f2ce9fa.png)
+
+![Step 3 RMSE](https://user-images.githubusercontent.com/84423466/173992738-555c0146-0269-4565-b8f3-374cec246236.png)
 
 Finally, in step 4, I filled in the code to calculate the non-linear measurement function get_hx(x). It took a lot of time to understand the rotation and translation concepts that were implemented in get_H(x).
+
+![Step 4 RMSE](https://user-images.githubusercontent.com/84423466/173992761-798c602f-8a67-4ecc-a23f-61da1deacc89.png)
+
 
 ### 2. Do you see any benefits in camera-lidar fusion compared to lidar-only tracking (in theory and in your concrete results)? 
 If we are talking about efficiency, I'd say a lidar-only system will be sufficient 99% of the time. But since human lives are involved, 99% is not good enough. So the redundancy provided by a camera is critical. I did not see a difference in RMSE after introducing the camera in Step 4. 
